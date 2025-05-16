@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url(https://jknewstoday.com/wp-content/uploads/2021/09/weather.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container {
+            background-color: #fff;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            max-width: 400px;
+            width: 90%;
+            background-color: #eeeaea34;
+            backdrop-filter: blur(100px);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .report {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 390px;
+            width: 90%;
+            margin: 20px auto;
+            background-color: #eeeaea34;
+            backdrop-filter: blur(100px);
+            display: none;
+        }
+        .report-heading {
+            font-size: 24px;
+            color: #444;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .report-item {
+            text-align: center;
+            font-size: 16px;
+            color: #555;
+            margin:8px 0;
+        }
+    </style>
+</head>
+<body>
+    <form class="container" id="form">
+        <h1>WEATHER CHECKER</h1>
+        
+        <div class="form-group">
+            <label for="latitude">Latitude</label>
+            <input type="text" id="latitude" name="latitude">
+        </div>
+
+        <div class="form-group">
+            <label for="longitude">Longitude</label>
+            <input type="text" id="longitude" name="longitude">
+        </div>
+    
+        <button type="submit">Submit</button>
+    </form>
+    
+    <div class="report" id="result">
+        <h1 class="report-heading">AIR QUALITY</h1>
+        <p class="report-item">AQI : <span id="api"></span></p>
+        <p class="report-item">CO : <span id="co"></span></p>
+        <p class="report-item">NO2 : <span id="no2"></span></p>
+        <p class="report-item">O3 : <span id="o3"></span></p>
+        <p class="report-item">PM2.5 : <span id="pm2"></span></p>
+        <p class="report-item">PM10 : <span id="pm10"></span></p>
+        <p class="report-item">SO2 : <span id="so2"></span></p>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
